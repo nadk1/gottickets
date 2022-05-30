@@ -1,2 +1,13 @@
 // Import page-specific CSS files here.
 @import "home";
+@import "navbar";
+@import "banner";
+@import "button";
+@import "card";
+@import "footer";
+@import "search";
+
+.search {
+    padding: 20px 0;
+}
+
