@@ -9,10 +9,16 @@ class EventsController < ApplicationController
 
   def new
     @event = Event.new
+  #  @categories = Category.all
   end
-
+# Need to add categories to event creation
   def create
     @event = Event.new(event_params)
+    if @event.save
+      redirect_to event_path(@event)
+    else
+      render :new
+    end
   end
 
   private
