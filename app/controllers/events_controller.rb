@@ -11,12 +11,11 @@ class EventsController < ApplicationController
 
   def new
     @event = Event.new
-    @categories = Category.all
   end
 
   def create
     @event = Event.new(event_params)
-    @categories = Category.all
+    @event.user = current_user
     if @event.save
       redirect_to event_path(@event)
     else
