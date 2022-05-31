@@ -11,3 +11,17 @@
     padding: 20px 0;
 }
 
+.category{
+    display: flex;
+    justify-content: space-around;
+    text-decoration: none;
+    li {
+        list-style-type: none;
+        padding: 15px;
+        border-radius: 50px;
+        background-color: aqua;
+        width: 200px;
+        text-align: center;
+    }
+    margin-bottom: 20px;
+}

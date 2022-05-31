@@ -15,6 +15,9 @@ user1 = User.create(email: "test@gmail.com", password: "123456")
 category1 = Category.create(name: "Sport")
 event1 = Event.new(name: "soccer match", description: "The one and only manchester vs liverpool match of the year", location: "England", price: 100, capacity: 100, date: "10/06/2022")
 
+Category.create(name: "Concert")
+Category.create(name: "Cinema")
+
 event1.user = user1
 event1.category = category1
 

@@ -9,9 +9,15 @@
   </div>
   <div class = 'category-container'>
       <div class='category'>
-          <p><strong>Sports</strong></p>
+          <% Category.all.each do |c| %>
+            <ul>
+              <li>
+                <%= c.name %>
+              </li>
+            </ul>
+          <% end %>
       </div>
-      <div>
+      <div class='white'>
           <% @events.each do |event| %>
           <div class="card-trip">
             <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
