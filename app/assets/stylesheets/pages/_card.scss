@@ -3,7 +3,12 @@
     background: white;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     padding: 10px;
+    margin: 16px;
+  }
 
+  .white {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
   }
   
   .card-trip > img {

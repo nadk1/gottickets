@@ -1,11 +1,19 @@
+  <div>
+    <%= render '/pages/banner' %>
+  </div>
+
+
 <div class="container">
-  <%= @event.name %>
-  <br>
-  <%= @event.description %>
-  <br>
-  <%= @event.location %>
-  <br>
-  <%= @event.price %>
-  <br>
-  <%= render "bookings/new" %>
+    <div>
+      <h1><strong><%= @event.name %></strong></h1>
+    </div>
+    <div>
+      <%= @event.description %>
+    </div>
+    <div>
+      <%= @event.location %>
+    </div>
+    <div>
+      <%= @event.price %>
+    </div>
 </div>
