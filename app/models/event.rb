@@ -1,6 +1,8 @@
 class Event < ApplicationRecord
-  belongs_to :category, :user
-  has_many :reviews, :bookings
+  belongs_to :category
+  belongs_to :user
+  has_many :reviews
+  has_many :bookings
 
   validates :name, presence: true, uniqueness: { scope: :date,
                                                  message: "Already an event with that name on this date!" }
