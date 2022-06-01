@@ -7,6 +7,7 @@
     <%= f.input :price, label: "Price:" %>
     <%= f.input :capacity, label: "Capacity:" %>
     <%= f.input :date, label: "Date:" %>
+    <%= f.input :photo, as: :file %>
 
     <%= f.button :submit, value: 'Create event', class: "btn btn-primary" %>
   <% end %>

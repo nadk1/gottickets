@@ -2,8 +2,7 @@
   <%= link_to "Create new event", new_event_path, :class => 'btn btn-primary'  %>
 
   <% @events.each do |event| %>
-    <div class="card" style="width: 18rem;">
-      <img src="..." class="card-img-top" alt="...">
+    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path event.photo.key, width: 150, crop: :fit %>')">
       <div class="card-body">
         <h5 class="card-title"> <%= event.name %></h5>
         <p class="card-text"> <%= event.description %></p>
