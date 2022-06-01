@@ -5,9 +5,8 @@
             <div class="col-lg-6 mx-auto">
                 <p class="lead mb-4 text-black">The best place to find tickets to your favorite events in Mauritius. Buy and sell tickets to your events.</p>
                 <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                    <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Buy Tickets</button>
-                    <button type="button" class="btn btn-warning btn-lg px-4 text-white">Sell Tickets</button>
+                    <%= link_to "Buy Tickets", events_path, class: "btn btn-primary btn-lg px-4 gap-3" %>
+                    <%= link_to "Sell Tickets", new_event_path, class: "btn btn-warning btn-lg px-4 text-white" %>
                 </div>
             </div>
         </div>
-

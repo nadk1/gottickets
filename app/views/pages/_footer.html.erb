@@ -1,9 +1,9 @@
         <div class="container">
             <footer class="py-3 my-4">
                 <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-white">Home</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-white">Buy Events</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-white">Sell Events</a></li>
+                <li class="nav-item"><%= link_to "Home", root_path, class: "nav-link px-2 text-white" %></li>
+                <li class="nav-item"><%= link_to "Buy Tickets", events_path, class: "nav-link px-2 text-white" %></li>
+                <li class="nav-item"><%= link_to "Sell Tickets", new_event_path, class: "nav-link px-2 text-white" %></li>
                 </ul>
                 <p class="text-center text-white">© 2022 Company, Inc</p>
             </footer>

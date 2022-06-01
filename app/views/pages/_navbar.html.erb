@@ -5,21 +5,24 @@
                     <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
                     <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
                     </a>
-            
+
                     <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                    <% if user_signed_in? %>
                         <li class="nav-link px-2 text-secondary"><%= link_to "Home", root_path%></li>
                         <li class="nav-link px-2 text-white"><%= link_to "Buy", events_path%></li>
-                        <li class="nav-link px-2 text-white"><%= link_to "Sell", events_path%></li>
-                        </ul>
-                
+                        <% if user_signed_in? %>
+                          <li class="nav-link px-2 text-white"><%= link_to "Sell", new_event_path%></li>
+                        <% end %>
+                    </ul>
                         <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
                         <input type="search" class="form-control form-control-dark text-white bg-dark" placeholder="Search..." aria-label="Search">
                         </form>
-                    <% end %>
                     <div class="text-end">
-                        <button type="button" class="btn btn-outline-light me-2"> <%=  link_to "Login", new_user_session_path %></button>
-                        <button type="button" class="btn btn-warning"><%=  link_to "Sign-up", new_user_session_path %></button>
+                        <% if user_signed_in? == false %>
+                          <button type="button" class="btn btn-outline-light me-2"> <%=  link_to "Login", new_user_session_path %></button>
+                          <button type="button" class="btn btn-warning"><%=  link_to "Sign up", new_user_registration_path %></button>
+                        <% else %>
+                          <button type="button" class="btn btn-warning"><%=  link_to "Log out", destroy_user_session_path, method: :delete %></button>
+                        <% end %>
                     </div>
                 </div>
             </div>
