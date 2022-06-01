@@ -16,4 +16,5 @@
     <div>
       <%= @event.price %>
     </div>
+    <%= cl_image_tag @event.photo.key, height: 300, width: 400, crop: :fill %>
 </div>
