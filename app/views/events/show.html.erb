@@ -18,13 +18,11 @@
             <p class="lead text-black fw-bold">Maximum capacity for the event <%= @event.capacity %> Persons</p>
             <h2 class="display-7 fw-bold lh-1 mb-3">Price: Rs<%= @event.price %></h2>
             <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-            <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Buy</button>
+            <%= render "bookings/new", event_id: @event.id, id: @booking %>
             <button type="button" class="btn btn-warning btn-lg px-4">Review</button>
             </div>
         </div>
     </div>
-
-    <%= render "bookings/new", event_id: @event.id, id: @booking %>
 
 </div>
 <!-- Review Section -->
