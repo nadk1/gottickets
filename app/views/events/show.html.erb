@@ -1,20 +1,65 @@
-  <div>
-    <%= render '/pages/banner' %>
-  </div>
 
+<!-- hero/banner section -->
+<div class="px-4 py-4 my-2 mb-1 text-center">
+    <h1 class="display-5 fw-bold"><%= @event.name %></h1>
+    <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4 text-black"><%= @event.description %></p>
+    </div>
+</div>
+<!-- photo and description -->
+<div class="container col-xxl-8 px-4 py-2">
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+        <div class="col-10 col-sm-8 col-lg-6">
+            <img src="https://images.unsplash.com/photo-1513265472937-50d3e680377c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+        </div>
+        <div class="col-lg-6">
+            <h1 class="lead text-black fw-bold">Location:<%=  @event.location %></h1>
+            <h1 class="lead text-black fw-bold">Date:<%= @event.date %></h1>
+            <p class="lead text-black fw-bold">Maximum capacity for the event <%= @event.capacity %> Persons</p>
+            <h2 class="display-7 fw-bold lh-1 mb-3">Price: Rs<%= @event.price %></h2>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+            <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Buy</button>
+            <button type="button" class="btn btn-warning btn-lg px-4">Review</button>
+            </div>
+        </div>
+    </div>
 
-<div class="container">
-    <div>
-      <h1><strong><%= @event.name %></strong></h1>
+    <%= render "bookings/new", event_id: @event.id, id: @booking %>
+
+</div>
+<!-- Review Section -->
+<div class="container px-4 py-2">
+    <h2 class="pb-2 border-bottom">Reviews</h2>
+    <div class="list-group w-auto">
+        <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+        <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+        <div class="d-flex gap-2 w-100 justify-content-between">
+            <div>
+            <h6 class="mb-0">List group item heading</h6>
+            <p class="mb-0 opacity-75">Some placeholder content in a paragraph.</p>
+            </div>
+            <small class="opacity-50 text-nowrap">now</small>
+        </div>
+        </a>
+        <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+        <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+        <div class="d-flex gap-2 w-100 justify-content-between">
+            <div>
+            <h6 class="mb-0">Another title here</h6>
+            <p class="mb-0 opacity-75">Some placeholder content in a paragraph that goes a little longer so it wraps to a new line.</p>
+            </div>
+            <small class="opacity-50 text-nowrap">3d</small>
+        </div>
+        </a>
+        <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+        <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+        <div class="d-flex gap-2 w-100 justify-content-between">
+            <div>
+            <h6 class="mb-0">Third heading</h6>
+            <p class="mb-0 opacity-75">Some placeholder content in a paragraph.</p>
+            </div>
+            <small class="opacity-50 text-nowrap">1w</small>
+        </div>
+        </a>
     </div>
-    <div>
-      <%= @event.description %>
-    </div>
-    <div>
-      <%= @event.location %>
-    </div>
-    <div>
-      <%= @event.price %>
-    </div>
-    <%= cl_image_tag @event.photo.key, height: 300, width: 400, crop: :fill %>
 </div>
