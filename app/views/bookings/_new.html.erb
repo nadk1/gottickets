@@ -1,4 +1,4 @@
 
 <%= simple_form_for [@event, @booking], url: event_bookings_path(event_id: @event.id), method: :post do |f|  %>
-    <%= f.button :submit, value: 'Book', class: "btn btn-primary", data: { confirm: "Please confirm you are booking #{@event.name}." } %>
+    <%= f.button :submit, value: 'Book', class: "btn btn-primary btn-lg px-4 me-md-2", data: { confirm: "Please confirm you are booking #{@event.name}." } %>
 <% end %>
