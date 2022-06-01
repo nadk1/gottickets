@@ -16,4 +16,5 @@
     <div>
       <%= @event.price %>
     </div>
+    <%= render "bookings/new", event_id: @event.id, id: @booking %>
 </div>
