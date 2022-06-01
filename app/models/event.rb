@@ -15,4 +15,5 @@ class Event < ApplicationRecord
   validates :price, presence: true, numericality: { only_integer: true }
   validates :capacity, presence: true, numericality: { only_integer: true }
   validates :date, presence: true
+  validates :photo, presence: true
 end
