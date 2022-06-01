@@ -15,7 +15,8 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.user = current_user
-    @event = @booking.event
+    @event = Event.find(params[:event_id])
+    @booking.event = @event
     if @booking.save
       redirect_to event_path(@event)
     else
