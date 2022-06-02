@@ -17,6 +17,8 @@ class EventsController < ApplicationController
   def show
     @booking = Booking.new
     @user = current_user
+    @bookings = @event.bookings
+    @current_user_booking = @bookings.where(user: @user).last
   end
 
   def new

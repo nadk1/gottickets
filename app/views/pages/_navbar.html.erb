@@ -13,9 +13,17 @@
                           <li class="nav-link px-2 text-white"><%= link_to "Sell", new_event_path%></li>
                         <% end %>
                     </ul>
-                        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+                        <!--<form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
                         <input type="search" class="form-control form-control-dark text-white bg-dark" placeholder="Search..." aria-label="Search">
-                        </form>
+                        </form> -->
+                        <%= form_tag events_path, method: :get do %>
+                          <%= text_field_tag :query,
+                            params[:query],
+                            class: "form-control",
+                            placeholder: "Find an event"
+                          %>
+                          <%= submit_tag "Search", class: "btn btn-primary" %>
+                        <% end %>
                     <div class="text-end">
                         <% if user_signed_in? == false %>
                           <button type="button" class="btn btn-outline-light me-2"> <%=  link_to "Login", new_user_session_path %></button>
