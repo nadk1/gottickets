@@ -19,4 +19,11 @@ class Event < ApplicationRecord
   validates :capacity, presence: true, numericality: { only_integer: true }
   validates :date, presence: true
   validates :photo, presence: true
+
+  include PgSearch::Model
+  pg_search_scope :search_by_name_and_location,
+    against: [ :name, :location ],
+    using: {
+      tsearch: { prefix: true }
+    }
 end
