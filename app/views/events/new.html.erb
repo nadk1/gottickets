@@ -3,7 +3,9 @@
     <%= f.input :name, label: "Event name:" %>
     <%= f.input :description, label: "Description:" %>
     <%= f.association :category, label: "Category:" %>
-    <%= f.input :location, label: "Location:" %>
+    <%= f.input :location, label: "Location:",
+                input_html: { data: { geocoder_target: "location" }, class: "d-none"  },
+                wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'] } } %>
     <%= f.input :price, label: "Price:" %>
     <%= f.input :capacity, label: "Capacity:" %>
     <%= f.input :date, label: "Date:" %>
