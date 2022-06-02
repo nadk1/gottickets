@@ -7,8 +7,8 @@ class EventsController < ApplicationController
     @categories = Category.all
     @markers = @events.geocoded.map do |event|
       {
-        lat: flat.latitude,
-        lng: flat.longitude
+        lat: event.latitude,
+        lng: event.longitude
       }
     end
   end
