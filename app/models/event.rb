@@ -1,8 +1,8 @@
 class Event < ApplicationRecord
   belongs_to :category
   belongs_to :user
-  has_many :reviews
   has_many :bookings
+  has_many :reviews, through: :bookings, source: :event
   has_one_attached :photo
 
   geocoded_by :location
