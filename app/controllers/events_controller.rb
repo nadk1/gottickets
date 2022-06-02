@@ -15,10 +15,18 @@ class EventsController < ApplicationController
   end
 
   def show
+    @event_map = Event.where(id: params[:id])
     @booking = Booking.new
     @user = current_user
     @bookings = @event.bookings
     @current_user_booking = @bookings.where(user: @user).last
+    @markers = @event_map.geocoded.map do |event|
+      {
+        lat: event.latitude,
+        lng: event.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { event: event })
+      }
+    end
   end
 
   def new
