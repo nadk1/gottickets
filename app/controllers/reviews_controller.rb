@@ -5,14 +5,16 @@ class ReviewsController < ApplicationController
     
     def new
         @review = Review.new
+        @user = current_user
+        @current_user_booking = Booking.find(params[:booking_id])
     end
 
     def create
-        @review = review.new(review_params)
-        @booking = Boooking.find(params[:booking_id])
+        @review = Review.new(review_params)
+        @booking = Booking.find(params[:booking_id])
         @review.booking = @booking
         if @review.save
-            redirect_to event_path(@event)
+            redirect_to event_path(@booking.event)
         else
             render :new
         end
