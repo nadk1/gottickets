@@ -1,1 +1,61 @@
-<%= @user.first_name %>
+<!-- User Account Header -->
+        <div class="container d-flex justify-content-center col-6">
+            <div class="d-block py-3 my-3">
+                <div class="align-content-center">
+                    <img src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80" class="rounded-circle img-thumbnail ms-md-5" width="240" height="240" alt="profile picture">
+                </div>
+                <div class="text-dark text-decoration-none">
+                    <h1 class="mt-4 mb-5"><%= @user.first_name %></h1>        
+                </div>
+                    <!-- <a href="/docs/5.2/examples/" class="btn btn-primary btn-sm m-1">Buy</a>
+                    <a href="/docs/5.2/examples/" class="btn btn-warning btn-sm m-1">Sell</a> -->
+            </div>
+        </div>
+        
+        
+<!-- Events -->
+<div class="container">
+    <div class="row g-5">
+        <div class="col-md-6">
+            <h3 class="pb-4 mb-4 fst-italic border-bottom">Your Bought Events</h3>
+
+            <div class="h-90 p-5 text-white bg-dark rounded-3 my-4">
+                <h2>EVENT NAME</h2>
+                <p>This is the Event Description and will be used in the display of this event card.</p>
+                <p>Event Location</p>
+                <button class="btn btn-outline-light" type="button">view event</button>
+            </div>
+            <div class="h-90 p-5 text-white bg-dark rounded-3 my-4">
+                <h2>EVENT NAME</h2>
+                <p>This is the Event Description and will be used in the display of this event card.</p>
+                <p>Event Location</p>
+                <button class="btn btn-outline-light" type="button">view event</button>
+            </div>
+            <div class="h-90 p-5 text-white bg-dark rounded-3 my-4">
+                <h2>EVENT NAME</h2>
+                <p>This is the Event Description and will be used in the display of this event card.</p>
+                <p>Event Location</p>
+                <button class="btn btn-outline-light" type="button">view event</button>
+            </div>
+            <div class="h-90 p-5 text-white bg-dark rounded-3 my-4">
+                <h2>EVENT NAME</h2>
+                <p>This is the Event Description and will be used in the display of this event card.</p>
+                <p>Event Location</p>
+                <button class="btn btn-outline-light" type="button">view event</button>
+            </div>
+        </div>
+    
+        <div class="col-md-6">
+            <h3 class="pb-4 mb-4 fst-italic border-bottom">Your Listed Events</h3>
+
+            <div class="position-sticky">
+                <div class="h-90 p-5 text-white bg-dark rounded-3">
+                    <h2>EVENT NAME</h2>
+                    <p>This is the Event Description and will be used in the display of this event card.</p>
+                    <p>Event Location</p>
+                    <button class="btn btn-outline-light" type="button">view event</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
