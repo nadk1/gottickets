@@ -4,7 +4,11 @@ class EventsController < ApplicationController
   before_action :set_user
 
   def index
-    @events = Event.all
+    if params[:query].present?
+      @events = Event.search_by_name_and_location(params[:query])
+    else
+      @events = Event.all
+    end
     @categories = Category.all
     @markers = @events.geocoded.map do |event|
       {
