@@ -1,4 +1,6 @@
-<div class="container">
+
+<div class="container col-8 justify-content-center my-5">
+    <h2 class="pb-2 border-bottom my-5">Create your Event</h2>
   <%= simple_form_for @event, url: events_path, method: :post do |f|  %>
     <%= f.input :name, label: "Event name:" %>
     <%= f.input :description, label: "Description:" %>
@@ -11,6 +13,6 @@
     <%= f.input :date, label: "Date:" %>
     <%= f.input :photo, as: :file %>
 
-    <%= f.button :submit, value: 'Create event', class: "btn btn-primary" %>
+    <%= f.button :submit, value: 'Create event', class: "btn btn-primary"%>
   <% end %>
 </div>
