@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
   before_action :set_event, only: %i[show edit update destroy]
+  before_action :set_user
 
   def index
     @events = Event.all
@@ -66,5 +67,9 @@ class EventsController < ApplicationController
 
   def set_event
     @event = Event.find(params[:id])
+  end
+
+  def set_user
+    @user = current_user if user_signed_in?
   end
 end
