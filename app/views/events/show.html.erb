@@ -45,7 +45,7 @@
     <h2 class="pb-2 border-bottom">Reviews</h2>
     <div class="list-group w-auto">
         <% if @event.reviews.empty? %>
-            <small><em class="text-muted">Be the first one to review this list</em></small>
+            <small><em class="text-black">Be the first one to review this list</em></small>
         <% end %>
 
         <% @event.bookings.each do |booking| %>
