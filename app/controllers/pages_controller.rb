@@ -3,8 +3,11 @@ class PagesController < ApplicationController
   before_action :set_user
 
   def home
-    @events = Event.search_by_name_and_location(params[:query])
-    @events = Event.all
+    if params[:query].present?
+      @events = Event.search_by_name_and_location(params[:query])
+    else
+      @events = Event.all
+    end
     @markers = @events.geocoded.map do |event|
       {
         lat: event.latitude,
