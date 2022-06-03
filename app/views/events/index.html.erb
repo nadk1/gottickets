@@ -4,11 +4,15 @@
   </div>
   <div class="cards-container">
     <% @events.each do |event| %>
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title"> <%= event.name %></h5>
-          <p class="card-text"> <%= event.description %></p>
-          <%= link_to "Go to event", event_path(event), class: "btn btn-primary" %>
+      <div class="h-90 p-5 text-white bg-dark rounded-3 my-4 d-flex">
+        <div class="col-lg-6 col-md-4 col-sm-12">
+          <%= cl_image_tag event.photo.key, height: 225, crop: :fill %>
+        </div>
+        <div class="col-lg-6 col-md-8 col-sm-12">
+          <h2><%= event.name %></h2>
+          <p><%= event.description %></p>
+          <p><%= event.location %></p>
+          <%= link_to "View Event", event_path(event), class: "btn btn-outline-light" %>
         </div>
       </div>
     <% end %>
