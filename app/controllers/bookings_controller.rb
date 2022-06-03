@@ -18,7 +18,7 @@ class BookingsController < ApplicationController
     @event = Event.find(params[:event_id])
     @booking.event = @event
     if @booking.save
-      redirect_to event_path(@event)
+      redirect_to user_path(@booking.user)
     else
       render :new
     end
